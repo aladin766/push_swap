@@ -13,3 +13,8 @@ void	swap(t_stack **stack)
 	second->next = first;
 	*stack = second;
 }
+
+void	push(t_stack **src, t_stack **dst)
+{
+    
+}
