@@ -41,3 +41,19 @@ void	rotate(t_stack **stack)
 	first->next = NULL;
 	last->next = first;
 }
+
+void	reverse_rotate(t_stack **stack)
+{
+	t_stack	*prev;
+	t_stack	*last;
+
+	if (!*stack || !(*stack)->next)
+		return ;
+	prev = *stack;
+	while (prev->next->next)
+		prev = prev->next;
+	last = prev->next;
+	prev->next = NULL;
+	last->next = *stack;
+	*stack = last;
+}
