@@ -16,5 +16,12 @@ void	swap(t_stack **stack)
 
 void	push(t_stack **src, t_stack **dst)
 {
-    
+    t_stack *node;
+
+	if (!*src)
+		return ;
+	node = *src;
+	*src = node->next;
+	node->next = *dst;
+	*dst = node;
 }
